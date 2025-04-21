@@ -17,15 +17,14 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 999;
+            z-index: 1;
             background: black;
         }
 
         #main-video {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
         }
 
         #page-content {
@@ -197,7 +196,7 @@
           <!-- <iframe height="500" src="https://www.youtube.com/watch?v=83aznJ11_OM&t=21s" title="YouTube video player" frameborder="0" style="border: 1px solid #bbb; border-radius: 10px; width: 100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
               <div class="row">
               <div class="col">
-                  <video autoplay muted loop playsinline controls src="./resources/Step/Step0.5.mp4" width="90%"
+                  <video autoplay muted loop playsinline controls src="./resources/Step/Step0.5.mp4" width="100%"
                          style="border-radius:10px; "></video>
               </div>
             </div>
@@ -243,9 +242,7 @@
         </div>
         <div class="is-centered">
           <center>
-          <video autoplay muted loop playsinline controls poster="./resources/loading-icon.gif" style="width: 100%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
-            <source src="./resources/Full/Full-fixed.mp4" type="video/mp4">
-          </video>
+            <img src="./resources/pipeline.jpg">
           </center>
       </div>
       </div>
@@ -296,22 +293,22 @@
           <td>
             <div class="row">
               <div class="col">
-                  <video autoplay muted loop playsinline controls src="./resources/Locomotion_Ability/outdoor_pit.mp4" width="100%"
+                  <video autoplay muted loop playsinline controls src="./resources/Locomotion_Ability/vision_test0.mp4" width="100%"
                          style="border-radius:10px; "></video>
               </div>
               <div class="col">
-                <video autoplay muted loop playsinline controls src="./resources/Locomotion_Ability/gap_0.5.mp4" width="100%"
+                <video autoplay muted loop playsinline controls src="./resources/Locomotion_Ability/vision_test1.mp4" width="100%"
                        style="border-radius:10px; "></video>
               </div>
             </div>
 
             <div class="row">
               <div class="col">
-                  <video autoplay muted loop playsinline controls src="./resources/Step/Step0.5.mp4" width="100%"
+                  <video autoplay muted loop playsinline controls src="./resources/Locomotion_Ability/vision_test2.mp4" width="100%"
                          style="border-radius:10px; "></video>
               </div>
               <div class="col">
-                <video autoplay muted loop playsinline controls src="./resources/Gap/gap0.8.mp4" width="100%"
+                <video autoplay muted loop playsinline controls src="./resources/Locomotion_Ability/vision_test3.mp4" width="100%"
                        style="border-radius:10px; "></video>
               </div>
             </div>
@@ -332,14 +329,25 @@
           <td>
             <div class="row">
               <div class="col">
-                  <video autoplay muted loop playsinline controls src="./resources/Blind/blind_test1.mp4" width="100%"
+                  <video autoplay muted loop playsinline controls src="./resources/Blind/blind_test0.mp4" width="100%"
                          style="border-radius:10px; "></video>
               </div>
               <div class="col">
-                <video autoplay muted loop playsinline controls src="./resources/Blind/blind_test0.mp4" width="100%"
+                <video autoplay muted loop playsinline controls src="./resources/Blind/blind_test1.mp4" width="100%"
                        style="border-radius:10px; "></video>
               </div>
             </div>
+              
+              <div class="row">
+                <div class="col">
+                    <video autoplay muted loop playsinline controls src="./resources/Blind/blind_test2.mp4" width="100%"
+                           style="border-radius:10px; "></video>
+                </div>
+                <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/Blind/blind_test3.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+                </div>
+              </div>
             <br>
           </td>
         </tr>
@@ -558,18 +566,27 @@
                 </div> -->
                 <div class="col">
                     <h2 class="subtitle">
-                      Without clearance reward, the robot easily touches the edge and fails on large gap terrain.
+                        Without image clipping and raycaster randomization, the robot can not predict correctly.
                     </h2>
                     <video autoplay muted loop playsinline controls src="./resources/Failure/faile_no_vision_dr.mp4" width="100%"
                           style="border-radius:10px; "></video>
                 </div>
                 <div class="col">
                   <h2 class="subtitle">
-                    Without direction distillation, it is hard to control the robot via joystick on the ramp terrain.
+                      Without zero commands training, it's hard to control the velocity and the robot lacks of robustness.
                   </h2>
                   <video autoplay muted loop playsinline controls src="./resources/Failure/fail_feet_clearance.mp4" width="100%"
                         style="border-radius:10px; "></video>
                 </div>
+                
+                <div class="col">
+                  <h2 class="subtitle">
+                    If using only single estimator, the robot can not walk normally. It shows many limitations in the outdoor environments.
+                  </h2>
+                  <video autoplay muted loop playsinline controls src="./resources/Failure/fail_feet_clearance.mp4" width="100%"
+                        style="border-radius:10px; "></video>
+                </div>
+
               </div>
             </div>
             <br>
